@@ -110,20 +110,20 @@ function vistaDetalle(pais){
 
 
     const newHTML=`
-    <div class="px-5 md:px-20 py-10 ">
+    <div class="px-5 md:px-20 py-10  ">
         <button id="back-button" class="flex items-center gap-2 bg-white dark:bg-[#2b3743] shadow-md px-8 py-2 rounded-md mb-16 text-sm font-semibold hover:opacity-80 transition cursor-pointer">
             ← Back
         </button>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center">
-            <div class="w-full max-w-140 justify-self-center lg:justify-self-start">
+        <div class="grid grid-cols-1 md:flex gap-10 md:gap-24 items-center">
+            <div class="w-full max-w-90 justify-self-center lg:justify-self-start">
                 <img class="w-full aspect-3/2 object-cover shadow-sm rounded-sm" src="${pais.flags.png}" alt="Bandera de ${pais.name}">
             </div>
 
             <div class="dark:text-white">
                 <h2 class="text-2xl md:text-3xl font-extrabold mb-6">${pais.name}</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 text-sm">
+                <div class=" grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 text-sm">
                     <div class="flex flex-col gap-2">
                         <p class="font-semibold text-slate-700 dark:text-slate-300">Native Name: <span class="font-normal text-slate-600 dark:text-slate-400">${nombreNativo}</span></p>
                         <p class="font-semibold text-slate-700 dark:text-slate-300">Population: <span class="font-normal text-slate-600 dark:text-slate-400">${pais.population.toLocaleString()}</span></p>
