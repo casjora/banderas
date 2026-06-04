@@ -17,6 +17,7 @@ import datosBanderas from '../data/data.json';
 let banderasdb = datosBanderas;
 let listaC = document.getElementById("region-section")
 let paisesC = document.getElementById("countries-section")
+let searchBar=document.getElementById("search-bar")
 
 
 function crearRegion(){
@@ -39,7 +40,6 @@ function crearRegion(){
 }
 
 function crearPaisCard(listaDePaises = banderasdb){
-    paisesC.innerHTML="";
 
     listaDePaises.forEach(pais=>{
         const tarjeta=document.createElement("article")
@@ -82,8 +82,16 @@ function filtrarPorRegion(){
     
 }
 
-function creadorDeTarjetas(){
-    let banderasdb = datosBanderas;
+function busquedaPorPais(){
+    searchBar.addEventListener("input",()=>{
+        const busqueda = searchBar.value
+        if(busqueda===""){
+            crearPaisCard(banderasdb)
+            return;
+        }
+        const resultado = banderasdb.filter(filtrado => filtrado.name.startsWith(busqueda))
+        crearPaisCard(resultado)
+    })
 }
 
 
@@ -94,4 +102,4 @@ function creadorDeTarjetas(){
 
 
 
-export {creadorDeTarjetas, crearRegion, crearPaisCard,filtrarPorRegion}
+export {busquedaPorPais, crearRegion, crearPaisCard,filtrarPorRegion}

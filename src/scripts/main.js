@@ -1,8 +1,8 @@
 import '../../style.css'
-import {creadorDeTarjetas,crearRegion,crearPaisCard,filtrarPorRegion  } from "./iterarBanderas";
+import {busquedaPorPais,crearRegion,crearPaisCard,filtrarPorRegion  } from "./iterarBanderas";
 import { inicializarDarkMode } from "./darkmode";
 
-creadorDeTarjetas();
+busquedaPorPais();
 crearRegion();
 crearPaisCard();
 
