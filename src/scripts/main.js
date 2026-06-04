@@ -1,12 +1,11 @@
-import '../../style.css'
-import {busquedaPorPais,crearRegion,crearPaisCard,filtrarPorRegion,vistaDetalle  } from "./iterarBanderas";
+import '../../style.css';
+import { crearRegion, crearPaisCard, inicializarEscuchadoresFiltros } from "./iterarBanderas";
 import { inicializarDarkMode } from "./darkmode";
 
-busquedaPorPais();
+// Renders iniciales en pantalla
 crearRegion();
-crearPaisCard();
+crearPaisCard(); // Muestra todos los países al cargar la página
 
+// Inicializamos los escuchadores de eventos
 inicializarDarkMode();
-
-filtrarPorRegion()
-vistaDetalle()
+inicializarEscuchadoresFiltros(); // <--- Activa la vigilancia en tiempo real de búsqueda y select
