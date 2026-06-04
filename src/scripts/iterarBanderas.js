@@ -89,12 +89,12 @@ function filtrarPorRegion(){
 
 function busquedaPorPais(){
     searchBar.addEventListener("input",()=>{
-        const busqueda = searchBar.value
+        const busqueda = searchBar.value.toLowerCase()
         if(busqueda===""){
             crearPaisCard(banderasdb)
             return;
         }
-        const resultado = banderasdb.filter(filtrado => filtrado.name.startsWith(busqueda))
+        const resultado = banderasdb.filter(filtrado => filtrado.name.toLowerCase().includes(busqueda))
         crearPaisCard(resultado)
     })
 }
