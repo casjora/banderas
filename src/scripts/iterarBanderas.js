@@ -15,34 +15,33 @@ import datosBanderas from '../data/data.json';
 } */
 
 let banderasdb = datosBanderas;
-
-function creadorDeTarjetas(){
-    let banderasdb = datosBanderas;
-}
-
 let listaC = document.getElementById("region-section")
+let paisesC = document.getElementById("countries-section")
+
 
 function crearRegion(){
     const regionesUnicas = [...new Set(banderasdb.map(pais => pais.region))];
     regionesUnicas.forEach(region=>{
         let elemento = document.createElement("option")
         elemento.textContent =region
+        elemento.value=region
         listaC.appendChild(elemento)
     })
 
-    const lista = banderasdb.forEach(pais => {
+   /*  const lista = banderasdb.forEach(pais => {
         let elemento = document.createElement("option")
+        
+        
         let region = pais.region
         
-    });
+    }); */
     
 }
 
-let paisesC = document.getElementById("countries-section")
+function crearPaisCard(listaDePaises = banderasdb){
+    paisesC.innerHTML="";
 
-function crearPaisCard(){
-
-    const paises = banderasdb.forEach(pais=>{
+    listaDePaises.forEach(pais=>{
         const tarjeta=document.createElement("article")
         const bandera = document.createElement("img")
         const contContenido = document.createElement("div")
@@ -67,4 +66,32 @@ function crearPaisCard(){
 }
 
 
-export {creadorDeTarjetas, crearRegion, crearPaisCard}
+function filtrarPorRegion(){
+    listaC.addEventListener("change",()=>{
+        const rSeleccionada = listaC.value
+
+        if(rSeleccionada==="default"){
+            crearPaisCard(banderasdb)
+            return;
+            
+        }
+        const filtrados = banderasdb.filter(filtrado => filtrado.region ===rSeleccionada)
+        crearPaisCard(filtrados)
+
+    })
+    
+}
+
+function creadorDeTarjetas(){
+    let banderasdb = datosBanderas;
+}
+
+
+
+
+
+
+
+
+
+export {creadorDeTarjetas, crearRegion, crearPaisCard,filtrarPorRegion}
