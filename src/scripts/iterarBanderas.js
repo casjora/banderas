@@ -40,6 +40,7 @@ function crearRegion(){
 }
 
 function crearPaisCard(listaDePaises = banderasdb){
+    paisesC.innerHTML="";
 
     listaDePaises.forEach(pais=>{
         const tarjeta=document.createElement("article")
