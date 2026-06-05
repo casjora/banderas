@@ -8,4 +8,4 @@ crearPaisCard(); // Muestra todos los países al cargar la página
 
 // Inicializamos los escuchadores de eventos
 inicializarDarkMode();
-inicializarEscuchadoresFiltros(); // <--- Activa la vigilancia en tiempo real de búsqueda y select
+inicializarEscuchadoresFiltros();

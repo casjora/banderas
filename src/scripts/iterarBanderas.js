@@ -51,7 +51,7 @@ function crearPaisCard(listaDePaises = banderasdb){
     });
 }
 
-// 3. LA FUNCIÓN MÁGICA: FILTRADO COMBINADO (Inspirado en la lógica del maestro)
+// 3. FILTRADO COMBINADO
 function aplicarFiltros() {
     // Leemos AMBOS valores al mismo tiempo en tiempo real
     const rSeleccionada = listaC.value;
@@ -83,7 +83,7 @@ function inicializarEscuchadoresFiltros() {
     searchBar.addEventListener("input", aplicarFiltros);
 }
 
-// 5. VISTA DE DETALLE (Mantiene tu lógica limpia y corregida)
+// 5. VISTA DE DETALLE
 function vistaDetalle(pais){
     if (!pais) return;
 
